@@ -33,7 +33,7 @@ public class EarthquakeCityMap extends PApplet {
 	private static final long serialVersionUID = 1L;
 
 	// IF YOU ARE WORKING OFFLINE, change the value of this variable to true
-	private static final boolean offline = true;
+	private static final boolean offline = false;
 	
 	// Less than this threshold is a light earthquake
 	public static final float THRESHOLD_MODERATE = 5;
@@ -111,7 +111,7 @@ public class EarthquakeCityMap extends PApplet {
 	*/
 	private SimplePointMarker createMarker(PointFeature feature)
 	{
-		int col;
+		int color;
 		int radius;
 		
 		// To print all of the features in a PointFeature (so you can see what they are)
@@ -138,18 +138,18 @@ public class EarthquakeCityMap extends PApplet {
 	    // above if you want to change what you mean by "moderate" and "light")
 	    
 	    if (mag < 4.0) {
-	    	col = colors[0];
+	    	color = colors[0];
 	    	radius = radii[0];
 	    } else if (mag >= 4.0 && mag <= 4.9) {
-	    	col = colors[1];
+	    	color = colors[1];
 	    	radius = radii[1];
 	    } else {
-	    	col = colors[2];
+	    	color = colors[2];
 	    	radius = radii[2];
 	    }
 	    
-	    marker.setColor(col);
-	    marker.setStrokeColor(col);
+	    marker.setColor(color);
+	    marker.setStrokeColor(color);
 	    marker.setRadius(radius);
 	    
 	    // Finally return the marker
@@ -162,7 +162,7 @@ public class EarthquakeCityMap extends PApplet {
 	}
 	
 	public void draw() {
-	    background(10);
+	    background(79, 141, 151);
 	    map.draw();
 	    addKey();
 	}
